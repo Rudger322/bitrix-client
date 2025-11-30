@@ -1,0 +1,12 @@
+<div class="wrapper">
+  @if (courses().length > 0) {
+    @for (course of courses(); track course.ID) {
+      <div class="course-block" (click)="addAnswer(course.ID)">
+        <h2>{{course.UF_TITLE}}</h2>
+        <p>{{course.UF_DESCRIPTION}}</p>
+      </div>
+    }
+  } @else {
+    <h1>Нет заданий</h1>
+  }
+</div>

@@ -1,0 +1,16 @@
+
+.wrapper {
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+}
+
+.course-block {
+  width: 300px;
+  height: 200px;
+  border: 1px solid darkgray;
+  padding: 16px;
+  border-radius: 8px;
+}

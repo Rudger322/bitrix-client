@@ -1,0 +1,12 @@
+<div class="wrapper">
+  @if (courses().length > 0) {
+    @for (course of courses(); track course.ID) {
+      <div class="course-block">
+        <h2>{{course.UF_TITLE}}</h2>
+        <p>{{course.author}}</p>
+        <p>{{course.UF_DESCRIPTION}}</p>
+        <button (click)="addCourse(course.ID)">Записаться</button>
+      </div>
+    }
+  }
+</div>
