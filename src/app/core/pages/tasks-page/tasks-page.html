@@ -4,6 +4,11 @@
       <div class="course-block" (click)="addAnswer(course.ID)">
         <h2>{{course.UF_TITLE}}</h2>
         <p>{{course.UF_DESCRIPTION}}</p>
+        @if (course.submission?.grade) {
+          <p>Оценка: {{course.submission?.grade}}</p>
+          <p>Комментарий: {{course.submission?.comment}}</p>
+          <p>Ваш ответ: {{course.submission?.solutionText}}</p>
+        }
       </div>
     }
   } @else {

@@ -10,6 +10,7 @@ interface Task {
   UF_DESCRIPTION: string;
   UF_TITLE: string;
   UF_DEADLINE: string;
+  submission?: { comment: string, grade: string, solutionText: string };
 }
 
 const MAIN_URL = 'http://192.168.0.100/api/'
@@ -27,7 +28,7 @@ export class TasksPage implements OnInit {
   courses = signal<Task[]>([]);
 
   ngOnInit() {
-    this.httpClient.post(MAIN_URL + 'Tasks/getByCourseId/', { id: this.router.url.charAt(7) }).subscribe((res: any) => {
+    this.httpClient.post(MAIN_URL + 'Submissions/getCourseSubmissionsByStudent/', { courseId: this.router.url.charAt(7), studentId: localStorage.getItem('userId') }).subscribe((res: any) => {
       this.courses.set(res.result.items);
       console.log(res);
     });

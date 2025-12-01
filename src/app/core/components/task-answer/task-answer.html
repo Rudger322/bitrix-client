@@ -1,9 +1,7 @@
+<h2 mat-dialog-title>Добавление ответа на задание</h2>
 <mat-form-field>
   <mat-label>Ответ на задание</mat-label>
-  <textarea matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"></textarea>
+  <input type="text" [(ngModel)]="answer">
+  <button matButton="elevated" (click)="sendAnswer()">Отправить ответ</button>
 </mat-form-field>
-<button>Отправить ответ</button>
+
